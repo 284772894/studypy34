@@ -1,5 +1,5 @@
 # study
-python 版本为3.4 tes
+python 版本为3.4
 
 调用方式为：
  sample_list(param)
