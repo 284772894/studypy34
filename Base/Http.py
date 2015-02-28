@@ -5,7 +5,7 @@ import http.client
 import time
 HTTP = 'http://'
 class http_request:
-    def __init__(self, base_url='dealer.kela.cn', http_port=36882, http_api='/RetailService/CAPI.asp', method='post'):
+    def __init__(self, base_url='XXXX.cn', http_port=36882, http_api='/XXX/CAPI.asp', method='post'):
         self.banse_url = base_url
         self.http_port = http_port
         self.http_api = http_api
