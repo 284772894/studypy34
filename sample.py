@@ -10,6 +10,7 @@ from Base.Sqlite import base_sqlite3
 from Base.comm import http_commom
 import Base.Excel as be
 import Base.OperateXml as bo
+import Base.OperateApp as bi
 #test
 hc = http_commom()
 
@@ -52,7 +53,7 @@ def sample_request(index=0):
                 else:
                     sumother = hc.count - (hc.sum_1 + hc.sum_03 + hc.sum_5)
                     sum_o = int((sumother/hc.count)*100)
-                    list_arg = [[u'小于300ms请求共:' + str(hc.sum_03) + '个', u'300-1000ms请求共:' + str(hc.sum_1 + '个'),
+                    list_arg = [[u'小于300ms请求共:' + str(hc.sum_03) + '个', u'300-1000ms请求共:' + str(hc.sum_1) + '个',
                                  '1s-5s 请求共:'+str(hc.sum_5) + '个', u'大于5s请求共:'+str(sumother) + '个'], ['yellowgreen', 'gold', 'lightskyblue', 'lightcoral'], [sum03, sum1, sum5, sum_o]]
                 print(list_arg)
                 bm.mat_pie(list_arg)
@@ -93,8 +94,8 @@ def sample_list(index):
         'drop': lambda: base_sqlite3('c:/test.db').drop_table(),
         'read_file': lambda: base_file('c:/test.txt', 'r').read_txt_rows(),
         'request': lambda: sample_request(),
-        'read_excel': lambda: be.read_excel(),
-        'write_excel': lambda: be.write_excel('d:/test.xlsx'),
+        'read_excel': lambda: be.read_excel('D:/app/PICT/result.xls'),
+        'write_excel': lambda: be.write_excel('c:/test.xls'),
         'multi_thread': lambda: multi_thread(),
         'write_file': lambda: base_file('c:/test.txt', 'a').write_txt(["eee", "rrr", "ttt"]),
         'sample_matp': lambda: sample_matp(),
@@ -105,10 +106,14 @@ def sample_list(index):
         'list_check': lambda: base_check(['a', 'b', 'c'], '3').check_index(),
         'check_file': lambda: base_file().check_file(),
         'mkdir_file': lambda: base_file('c:/test.txt', 'w').mkdir_file(),
-        'revome_file': lambda: base_file('c:/test.xlsx').remove_file(),
-        'read_xml': lambda: bo.read_xml()
+        'revome_file': lambda: base_file('c:/test.xls').remove_file(),
+        'read_xml': lambda: bo.read_xml(),
+        'install_app': lambda: bi.base_adb_app().start_install()
     }
     return calculation[index]()
 
 if __name__ == "__main__":
-    sample_list('read_xml')
+    sample_list('read_excel')
+    #adb shell 'am start -n ｛包(package)名｝/｛包名｝.{活动(activity)名称}'
+    #com.example.ffdianxun1_1
+    #com.example.ffdianxun1_1.EntryPageActivity
