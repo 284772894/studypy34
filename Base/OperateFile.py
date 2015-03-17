@@ -30,7 +30,7 @@ class base_file:
         self.fileHandle.close()
     def check_file(self):
         if not os.path.isfile(self.file):
-            print(u'文件不存在')
+            print('文件不存在' + self.file)
             sys.exit()
         print("文件存在！")
 

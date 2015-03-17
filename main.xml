@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<root>
+    <postparams value="{'a':'b'}">post</postparams> <!--post 请求参数 -->
+    <ytitle value="响应时间">响应时间</ytitle>
+    <xtitle value="请求数量">请求数量</xtitle>
+    <title value="登陆">登陆</title>
+    <count value="10">10</count>
+    <baseurl value="119.29.57.169">119.29.57.169</baseurl>
+    <httpapi value="/QiXun/index.php/QiXunManager/Interface/UserLogin?
+userName=SalesmanZy&amp;password=1234567">UserLogin</httpapi>
+    <method value="get">post</method>
+    <mat value="pie">mat</mat> <!-- #pie饼形 ,bar柱形,plot曲线-->
+    <xlim value="100">xlim</xlim> <!-- 曲线设置横x轴的上下限.请求次数-->
+    <ylim value="3">ylim</ylim> <!--曲线设置横y轴的上下限,相应时间 -->
+ </root>

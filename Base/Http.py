@@ -19,10 +19,13 @@ class http_request:
             start_time = time.time()
             http_conn.request(method=self.http_method, url=self.http_api, body=http_params, headers=http_headers)
             http_response = http_conn.getresponse()
+            print(HTTP + self.banse_url + self.http_api)
             if http_response.status == 200:
+                print(time.time() - start_time)
                 return time.time() - start_time
                 #return http_response.read().decode('utf-8')
             else:
+                print("请求失败")
                 return False
         finally:
             http_conn.close()
