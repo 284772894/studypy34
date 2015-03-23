@@ -6,7 +6,7 @@ from Base.OperateFile import base_file
 # 	<uu value="cc">ccc-key</uu>
 # 	<uu value="dd">dd-key</uu>
 # </root>
-def read_xml(file='c:/web.xml'):
+def read_xml(file='D:/web.xml'):
     base_file(file).check_file()
     doc = minidom.parse(file)
     root = doc.documentElement

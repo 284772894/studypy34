@@ -7,8 +7,9 @@ from Base.OperateApp import base_adb_app
 
 class LoginAndroidTests(unittest.TestCase):
     def setUp(self):
-        self.d = Device('192.168.1.62:5555')
+        self.d = Device('192.168.1.65:5555')
         self.d.screen.on()
+        #base_adb_app().start_install()
         base_adb_app().open_app('io.appium.unlock', 'io.appium.unlock.Unlock') #打开自动解锁app
     def tearDown(self):
         print("down")
@@ -25,11 +26,11 @@ class LoginAndroidTests(unittest.TestCase):
 
 
 
-        t = self.d(className="android.widget.ListView") .child_by_text("阿布",allow_scroll_search=True,className="android.view.View")
+        t = self.d(className="android.widget.ListView") .child_by_text("Simply",allow_scroll_search=True,className="android.view.View")
         t.click()
 
         self.d(text='发消息').click()
-        self.d(className="android.widget.TextView")[0].click
+        self.d(className="android.widget.TextView", text="")[0].set_text("hello")
         #36,1278,200,300t
         #[270,1772][540,1905]u
 if __name__ == '__main__':
