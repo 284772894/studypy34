@@ -2,7 +2,7 @@ __author__ = 'Administrator'
 from uiautomator import Device
 import unittest
 import time
-from Base.OperateApp import base_adb_app
+import Base.OperateApp as bi
 
 
 class LoginAndroidTests(unittest.TestCase):
@@ -10,14 +10,14 @@ class LoginAndroidTests(unittest.TestCase):
         self.d = Device('192.168.1.65:5555')
         self.d.screen.on()
         #base_adb_app().start_install()
-        base_adb_app().open_app('io.appium.unlock', 'io.appium.unlock.Unlock') #打开自动解锁app
+        bi.open_app('io.appium.unlock', 'io.appium.unlock.Unlock') #打开自动解锁app
     def tearDown(self):
         print("down")
 
     def test_case1(self):
         print("testcase1")
         #self.d(className="android.widget.ListView").child(text="邓胜强").click()
-        base_adb_app().open_app('com.tencent.mm', 'com.tencent.mm.ui.LauncherUI')
+        bi.open_app('com.tencent.mm', 'com.tencent.mm.ui.LauncherUI')
         self.d(text='通讯录').click()
         #self.d.swipe(40, 2000, 40, 40, 10)
         # self.d.swipe(60, 1700, 40, 40, 10)

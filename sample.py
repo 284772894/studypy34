@@ -118,13 +118,15 @@ def sample_list(index):
         'mkdir_file': lambda: base_file('c:/test.txt', 'w').mkdir_file(),
         'revome_file': lambda: base_file('c:/test.xls').remove_file(),
         'read_xml': lambda: bo.read_xml(),
-        'install_app': lambda: bi.base_adb_app().start_install(),
-        'read_write_case': lambda: bt.read_write_case('D:/app/PICT/result.xls', 'D:/app/PICT/result1.xls')
+        'install_app': lambda: bi.install("e/study/XX.apk"),
+        'read_write_case': lambda: bt.read_write_case('D:/app/PICT/result.xls', 'D:/app/PICT/result1.xls'),
+        'batch_install_app': lambda: bi.bact_install("E:\\study1\\Apps\\")
     }
     return calculation[index]()
 
+
 if __name__ == "__main__":
-    sample_list('multi_thread')
+    sample_list('batch_install_app')
     #adb shell 'am start -n ｛包(package)名｝/｛包名｝.{活动(activity)名称}'
     #com.example.ffdianxun1_1
     #com.example.ffdianxun1_1.EntryPageActivity
