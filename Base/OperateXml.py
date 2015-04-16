@@ -30,6 +30,7 @@ def read_xml(file='D:/web.xml'):
     list_xml["title"] = title[0].getAttribute("value")
     list_xml["count"] = count[0].getAttribute("value")
     list_xml["baseurl"] = baseurl[0].getAttribute("value")
+    # list_xml["httpapi"] = list(eval(httpapi[0].getAttribute("value")))
     list_xml["httpapi"] = httpapi[0].getAttribute("value")
     list_xml["method"] = method[0].getAttribute("value")
     list_xml["mat"] = mat[0].getAttribute("value")

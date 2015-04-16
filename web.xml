@@ -1,14 +1,15 @@
-﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <root>
     <postparams value="{'a':'b'}">post</postparams> <!--post 请求参数 -->
-    <ytitle value="响应时间">响应时间</ytitle>
-    <xtitle value="请求数量10个">请求数量</xtitle>
-    <title value="登陆接口">登陆</title>
-    <count value="50">10</count>
-    <baseurl value="119.29.57.169">119.29.57.169</baseurl>
-    <httpapi value="/QiXun/index.php/QiXunManager/Interface/UserLogin?userName=SalesmanZy&amp;password=1234567">UserLogin</httpapi>
-    <method value="get">get</method>
-    <mat value="pie">mat</mat> <!-- #pie饼形 ,bar柱形,plot曲线-->
-    <xlim value="100">xlim</xlim> <!-- 曲线设置横x轴的上下限.请求次数-->
-    <ylim value="3">ylim</ylim> <!--曲线设置横y轴的上下限,相应时间 -->
+    <ytitle value="响应时间"></ytitle>
+    <xtitle value="请求数量个"></xtitle>
+    <title value="接口名"></title>
+    <count value="2"></count><!--请求总数 -->
+    <baseurl value="weixin.kidsme.cn"></baseurl>
+    <httpapi value="/index.php?g=Wap&amp;m=Shop&amp;a=productInfo&amp;id=99&amp;token=wurwej1399817648&amp;catid=71&amp;test=test">aa</httpapi>
+   <!--<httpapi value='["url,url,url,url"]'></httpapi> -->
+    <method value="get"></method>
+    <mat value="pie"></mat> <!-- #pie饼形 ,bar柱形,plot曲线-->
+    <xlim value="100"></xlim> <!-- 曲线设置横x轴的上下限.请求次数-->
+    <ylim value="3"></ylim> <!--曲线设置横y轴的上下限,相应时间 -->
  </root>

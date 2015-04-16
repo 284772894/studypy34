@@ -3,7 +3,7 @@ from Base.Check import base_check
 import os, sys
 class base_file:
     #method(r,w,a)
-    def __init__(self, file, method='a'):
+    def __init__(self, file, method='w'):
         self.file = file
         self.method = method
         self.fileHandle = None
@@ -32,7 +32,7 @@ class base_file:
         if not os.path.isfile(self.file):
             print('文件不存在' + self.file)
             sys.exit()
-        print("文件存在！")
+        # print("文件存在！")
 
     def mkdir_file(self):
         if not os.path.isfile(self.file):
