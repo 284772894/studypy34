@@ -50,7 +50,7 @@ python 版本为3.4
         'batch_install_app': lambda: bi.bact_install("E:\\study1\\Apps\\"),#批量安装app
         'Crawler': lambda : bcr.CrawlerFunc("http://tieba.baidu.com/p/3764230390")#多线程爬虫
 
-	setup.py是用cx_freeze打包成压缩安装文件的脚本
+	setup.py是用cx_freeze打包成压缩安装文件的脚本！
 
 
 
