@@ -7,7 +7,7 @@ import os, sys
 
 def read_write_case(read_excel='D:/app/PICT/result.xls', write_excel='D:/app/PICT/result1.xls'):
     #dict_key = ['起始价格', '结束价格', '钻重起始重量', '钻重结束重量', '颜色', '净度', '切工', '抛光', '对称', '荧光', '形状', '证书']
-    dict_key = ['预约号', '客户姓名', '客户电话', '下单时间', '客户状态', '客户来源', '起始预约时间', '结束预约时间']
+    dict_key = ['订单状态', '开始时间', '结束时间', '会员信息']
     base_file(read_excel).check_file()
     base_file(write_excel).check_file()
     data = xlrd.open_workbook(read_excel)
@@ -29,8 +29,7 @@ def read_write_case(read_excel='D:/app/PICT/result.xls', write_excel='D:/app/PIC
     workbook = xlsxwriter.Workbook(write_excel)
     worksheet = workbook.add_worksheet()
     for i in range(len(list)):
-        worksheet.write(i, 0, "设置条件：" + "\n" + list[i][dict_key[0]] + "," + list[i][dict_key[1]] + ',' + list[i][dict_key[2]] + ',' + list[i][dict_key[3]] +
-        ',' + list[i][dict_key[4]] + ',' + list[i][dict_key[5]] + ',' + list[i][dict_key[6]] + ',' + list[i][dict_key[7]] +"\n" + "点击提交")
+        worksheet.write(i, 0, "设置条件：" + "\n" + list[i][dict_key[0]] + "," + list[i][dict_key[1]] + ',' + list[i][dict_key[2]] +',' + list[i][dict_key[3]] +"\n" + "点击提交")
 
     workbook.close()
     return list

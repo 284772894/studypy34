@@ -12,6 +12,7 @@ import Base.Excel as be
 import Base.OperateXml as bo
 import Base.OperateApp as bi
 import Base.TestCase as bt
+import Base.Crawler as bcr
 import time
 import matplotlib.backends.backend_tkagg
 import tkinter
@@ -119,10 +120,11 @@ def sample_list(index):
         'read_xml': lambda: bo.read_xml(),
         'install_app': lambda: bi.install("e/study/XX.apk"),
         'read_write_case': lambda: bt.read_write_case('D:/app/PICT/result.xls', 'D:/app/PICT/result1.xls'),
-        'batch_install_app': lambda: bi.bact_install("E:\\study1\\Apps\\")
+        'batch_install_app': lambda: bi.bact_install("E:\\study1\\Apps\\"),
+        'Crawler': lambda : bcr.CrawlerFunc("http://tieba.baidu.com/p/3764230390")
     }
     return calculation[index]()
 
 
 if __name__ == "__main__":
-    sample_list('multi_thread')
+    sample_list('Crawler')

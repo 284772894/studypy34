@@ -44,7 +44,11 @@ python 版本为3.4
         'mkdir_file': lambda: base_file('c:/test.txt', 'w').mkdir_file(),#新建一个文件
         
         'revome_file': lambda: bf.remove_file(),#删除一个文件
-	'read_xml': lambda: bo.read_xml() #读取xml文件
+	   'read_xml': lambda: bo.read_xml() #读取xml文件
+       'install_app': lambda: bi.install("e/study/XX.apk"), #安装app
+        'read_write_case': lambda: bt.read_write_case('D:/app/PICT/result.xls', 'D:/app/PICT/result1.xls'),#写测试案例
+        'batch_install_app': lambda: bi.bact_install("E:\\study1\\Apps\\"),#批量安装app
+        'Crawler': lambda : bcr.CrawlerFunc("http://tieba.baidu.com/p/3764230390")#多线程爬虫
 
 	setup.py是用cx_freeze打包成压缩安装文件的脚本
 
