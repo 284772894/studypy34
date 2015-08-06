@@ -13,11 +13,12 @@ import Base.OperateXml as bo
 import Base.OperateApp as bi
 import Base.TestCase as bt
 import Base.Crawler as bcr
-import time
-import matplotlib.backends.backend_tkagg
-import tkinter
-import tkinter.filedialog
-import urllib3
+# import time
+# import matplotlib.backends.backend_tkagg
+# import tkinter
+# import tkinter.filedialog
+# import urllib3
+import Base.getDir
 hc = http_commom()
 br = bo.read_xml()
 http_params = {"list_arg": [], "request_num": [], "response_time": [], "sum_03": 0, "sum_5": 0, "sum_1": 0, "sum_timeout": 0}
@@ -121,10 +122,11 @@ def sample_list(index):
         'install_app': lambda: bi.install("e/study/XX.apk"),
         'read_write_case': lambda: bt.read_write_case('D:/app/PICT/result.xls', 'D:/app/PICT/result1.xls'),
         'batch_install_app': lambda: bi.bact_install("E:\\study1\\Apps\\"),
-        'Crawler': lambda : bcr.CrawlerFunc("http://tieba.baidu.com/p/3764230390")
+        'Crawler': lambda : bcr.CrawlerFunc("http://tieba.baidu.com/p/3764230390"),
+        'getCurrentDir': lambda: Base.getDir.BaseGetCurrentDir(filename='conf.ini')
     }
     return calculation[index]()
 
 
 if __name__ == "__main__":
-    sample_list('Crawler')
+    sample_list('getCurrentDir')
