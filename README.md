@@ -56,7 +56,6 @@ python 版本为3.4
         新增了读取ini配置文件，读取当前目录/上个目录/下个目录的脚本
         getDir.py 获取目录
         readini.py 读取ini配置文件
-
-
+        reTest.py 正则的简单学习
 
 
