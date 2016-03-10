@@ -38,3 +38,19 @@ def open_app(packagename, activity):
    os.popen("adb wait-for-device")
    print("start open app")
    os.popen("adb shell am start -n %s/%s" % (packagename, activity))
+
+def attached_devices():
+    command_result = ''
+    command_text = 'adb devices'
+    results = os.popen(command_text, "r")
+    while 1:
+        line = results.readline()
+        if not line: break
+        command_result += line
+        # print(result)
+    devices = results.partition('\n')[2].replace('\n', '').split('\tdevice')
+    flag = [device for device in devices if len(device) > 2]
+    if flag:
+        return True
+    else:
+        return False

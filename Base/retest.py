@@ -20,4 +20,4 @@ def testSplit():
     str_test = "out_2012.12.20.txt"
     re_reulst = re.split(r'\w+_(\d+)\.(\d+)\.(\d+)\.\w+', str_test)
     print(re_reulst)
-testSplit()
+# testSplit()

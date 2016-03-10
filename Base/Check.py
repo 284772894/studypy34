@@ -8,13 +8,13 @@ class base_check:
     def check_index(self):
         if type(self.param) == dict:
             if self.param.get(self.index, "default") == "default":
-                print ("False")
+                print("False")
                 return False
             return True
         if type(self.param) == list:
             if self.index in self.param:
-                print ("True")
+                print("True")
                 return True
-            print ("False")
+            print("False")
             return False
 
